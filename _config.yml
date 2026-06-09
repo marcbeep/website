@@ -1,0 +1,45 @@
+# Site settings
+title: Marc Beepath
+description: Marc Beepath is a Software Engineer based in the UK from Trinidad & Tobago.
+url: "https://marc.tt"
+lang: "en"
+author: "Marc Beepath"
+youtube_channel_id: "UCKoxl9AEeGte0uLwQxunldQ"
+
+# Build settings
+markdown: kramdown
+exclude: ["README.md", "node_modules", "package.json", "package-lock.json"]
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:path/
+  films:
+    output: true
+    permalink: /:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "writings"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "projects"
+  - scope:
+      path: ""
+      type: "films"
+    values:
+      layout: "films"

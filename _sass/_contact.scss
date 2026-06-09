@@ -1,0 +1,152 @@
+/* Contact page */
+
+.contact {
+  a {
+    text-decoration: none;
+    font-weight: inherit;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin: 0 0 1.5rem 0;
+    color: var(--color-dark);
+
+    @media (min-width: 48rem) {
+      font-size: 3.25rem;
+    }
+  }
+
+  .contact-intro {
+    font-size: 1.0625rem;
+    color: rgb(var(--fg) / 0.45);
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+  }
+
+  /* Email pill */
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    margin-bottom: 3.5rem;
+    border-radius: 1rem;
+    background: rgb(var(--fg) / 0.025);
+    border: 1px solid rgb(var(--fg) / 0.06);
+    transition: background-color 0.3s ease;
+
+    i {
+      font-size: 1rem;
+      color: rgb(var(--fg) / 0.3);
+    }
+
+    .contact-email-address {
+      font-size: 1.0625rem;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      color: rgb(var(--fg) / 0.7);
+      transition: color 0.2s ease;
+    }
+
+    .contact-arrow {
+      color: rgb(var(--fg) / 0.2);
+      line-height: 0;
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      background: rgb(var(--fg) / 0.04);
+
+      .contact-email-address {
+        color: var(--color-dark);
+      }
+
+      .contact-arrow {
+        color: rgb(var(--fg) / 0.4);
+      }
+    }
+  }
+
+  /* Elsewhere list */
+  .contact-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(var(--fg) / 0.25);
+    margin: 0 0 1.25rem 0;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1rem;
+    margin: 0 -1rem;
+    border-radius: 0.75rem;
+    transition: background-color 0.3s ease;
+
+    .contact-link-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    i {
+      font-size: 1rem;
+      width: 1rem;
+      text-align: center;
+      color: rgb(var(--fg) / 0.25);
+      transition: color 0.2s ease;
+    }
+
+    .contact-link-label {
+      font-size: 0.9375rem;
+      color: rgb(var(--fg) / 0.65);
+      transition: color 0.2s ease;
+    }
+
+    .contact-link-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-handle {
+      font-size: 0.8125rem;
+      font-family: var(--font-mono);
+      color: rgb(var(--fg) / 0.2);
+    }
+
+    .contact-arrow {
+      color: rgb(var(--fg) / 0.15);
+      line-height: 0;
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      background: rgb(var(--fg) / 0.025);
+
+      i {
+        color: rgb(var(--fg) / 0.45);
+      }
+
+      .contact-link-label {
+        color: var(--color-dark);
+      }
+
+      .contact-arrow {
+        color: rgb(var(--fg) / 0.35);
+      }
+    }
+  }
+}

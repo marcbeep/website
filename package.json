@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks"
+  },
+  "dependencies": {
+    "prettier": "^3.0.1"
+  }
+}

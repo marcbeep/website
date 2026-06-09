@@ -1,0 +1,91 @@
+/* Writings */
+
+.writings {
+  a {
+    text-decoration: none;
+    font-weight: inherit;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin: 0 0 0.75rem 0;
+    color: var(--color-dark);
+
+    @media (min-width: 48rem) {
+      font-size: 3.25rem;
+    }
+  }
+
+  .writings-intro {
+    font-size: 1.0625rem;
+    color: rgb(var(--fg) / 0.4);
+    line-height: 1.6;
+    margin: 0 0 3.5rem 0;
+
+    p {
+      margin: 0 0 0.75rem 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .writings-year-group {
+    margin-bottom: 3rem;
+  }
+
+  .writings-year {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(var(--fg) / 0.25);
+    margin: 0 0 1rem 0;
+  }
+
+  /* List row */
+  .writing-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.625rem 0.75rem;
+    margin: 0 -0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: rgb(var(--fg) / 0.025);
+
+      .writing-row-title {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  .writing-row-title {
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+    color: rgb(var(--fg) / 0.65);
+    transition: color 0.2s ease;
+  }
+
+  .writing-row-date {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: rgb(var(--fg) / 0.2);
+    flex-shrink: 0;
+  }
+}
+
+/* Detail excerpt */
+.writing-excerpt {
+  font-size: 1.0625rem;
+  color: rgb(var(--fg) / 0.4);
+  line-height: 1.6;
+  margin: 1rem 0 0 0;
+}

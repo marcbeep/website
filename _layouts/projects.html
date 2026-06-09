@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<article class="project">
+  {% if page.image %}
+  <div class="project-banner">
+    <img src="{{ page.image | absolute_url }}" alt="{{ page.title }}" class="project-banner-image">
+  </div>
+  {% endif %}
+
+  <header class="project-header">
+    {% if page.date %}
+    <time class="project-date">{{ page.date | date: "%B %Y" }}</time>
+    {% endif %}
+
+    <h1 class="project-title">{{ page.title }}</h1>
+
+    {% if page.description %}
+    <p class="project-excerpt">{{ page.description }}</p>
+    {% endif %}
+
+    {% if page.tech_stack %}
+    <div class="project-tags">
+      {% for tech in page.tech_stack %}<span class="project-tag">{{ tech }}</span>{% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.visit or page.external_links %}
+    <div class="project-links">
+      {% if page.visit %}
+      <a href="{{ page.visit }}" target="_blank" rel="noopener noreferrer" class="project-link project-link--primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Visit
+      </a>
+      {% endif %}
+
+      {% if page.external_links %}
+        {% for link in page.external_links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+          {% if link.label contains "GitHub" %}<i class="fab fa-github"></i>{% else %}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{% endif %}
+          {{ link.label }}
+        </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  {% include post-nav.html %}
+</article> 

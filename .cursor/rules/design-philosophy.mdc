@@ -1,0 +1,22 @@
+---
+description: Design philosophy for marc.tt — reference for all UI/UX decisions
+alwaysApply: true
+---
+
+# Design Philosophy
+
+Inspired by Apple. Three principles:
+
+1. **Purposeful** — every animation communicates something (entrance, hierarchy, interactivity). If it doesn't serve a purpose, remove it.
+2. **Fluid** — use natural ease curves (`cubic-bezier(0.25, 0.1, 0.25, 1)`), never linear or mechanical. Motion should feel like it has weight.
+3. **Restrained** — if you notice the animation, it's too much. Subtlety over spectacle. Prefer 6-8px translate and 400-600ms durations.
+
+## Implementation rules
+
+- CSS-first: SCSS with `@keyframes` and the `.animate-in` utility (stagger via the `--delay` custom property). No animation libraries.
+- Always respect `prefers-reduced-motion` with a media query.
+- Hover micro-interactions: subtle lifts (`translateY(-2px)`), scale (`scale(1.1)`), color transitions. Keep durations 200-300ms.
+- No scroll-triggered animations — the column is narrow; entrance-on-mount is enough.
+- Typography: Inter for body, JetBrains Mono for mono. Generous tracking on headings, tight on labels.
+- Color: monochrome. Layer opacity over solid colors for depth using the RGB tokens, e.g. `rgb(var(--fg) / 0.05)` and `rgb(var(--bg) / 0.6)`. Root font-size stays 16px.
+- Layout: single 640px column, generous whitespace, content-first.
