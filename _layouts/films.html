@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<article class="film">
+  <header class="film-header">
+    {% if page.date %}
+    <time class="film-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>
+    {% endif %}
+
+    <h1 class="film-title">{{ page.title }}</h1>
+
+    {% if page.description %}
+    <p class="film-excerpt">{{ page.description }}</p>
+    {% endif %}
+
+    {% if page.visit %}
+    <div class="film-actions">
+      <a href="{{ page.visit }}" target="_blank" rel="noopener noreferrer" class="film-watch">
+        <i class="fab fa-youtube"></i>
+        Watch on YouTube
+      </a>
+    </div>
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+  <div class="film-banner">
+    <img src="{{ page.image | absolute_url }}" alt="{{ page.title }}" class="film-banner-image">
+  </div>
+  {% endif %}
+
+  {% assign yt_id = page.visit | split: '/' | last | split: '?' | first %}
+  {% if yt_id %}
+  <div class="film-embed">
+    <iframe src="https://www.youtube.com/embed/{{ yt_id }}" title="{{ page.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  {% endif %}
+
+  <div class="film-content">
+    {{ content }}
+  </div>
+
+  {% include post-nav.html %}
+</article>

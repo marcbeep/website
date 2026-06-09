@@ -1,0 +1,30 @@
+---
+description: Code and comment conventions for marc.tt
+alwaysApply: true
+---
+
+# Code Style
+
+Keep code and comments as concise as they can be.
+
+## Comments
+
+- Comment intent, trade-offs, or non-obvious constraints — never narrate what the code already says.
+
+```scss
+// BAD — narrates the obvious
+.card { padding: 1rem; } // add padding to the card
+
+// GOOD — explains a non-obvious choice
+// Clip layer: lets grid-template-rows: 0fr collapse the padded panel fully.
+.menu-dropdown-clip { min-height: 0; overflow: hidden; }
+```
+
+- Prefer a one-line `/* Section */` header over multi-line ASCII banners.
+
+## General
+
+- Prefer editing existing files over adding new ones; reuse design tokens (`--fg`, `--bg`, `--font-*`) instead of hardcoding values.
+- SCSS lives in `_sass/` and is wired through `css/main.scss`. Homepage styles go in `_home.scss` under the `.home` scope.
+- Markup inside a block-level HTML element in a `.md` file is not processed as Markdown — write plain HTML there.
+- No dependencies for things CSS can do.

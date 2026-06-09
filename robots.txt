@@ -1,0 +1,9 @@
+# robots.txt for marc.tt
+User-agent: *
+Allow: /
+Allow: /projects/
+Allow: /writings/
+Allow: /films/
+
+# Sitemap location
+Sitemap: https://marc.tt/sitemap.xml 

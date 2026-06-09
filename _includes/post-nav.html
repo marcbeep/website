@@ -1,0 +1,25 @@
+{% if page.previous or page.next %}
+<nav class="post-nav">
+  <div class="post-nav-divider"></div>
+  <div class="post-nav-grid">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="post-nav-card">
+      <span class="post-nav-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Previous
+      </span>
+      <span class="post-nav-title">{{ page.previous.title }}</span>
+    </a>
+    {% endif %}
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="post-nav-card post-nav-card--next">
+      <span class="post-nav-label">
+        Next
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+      <span class="post-nav-title">{{ page.next.title }}</span>
+    </a>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}

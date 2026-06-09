@@ -1,0 +1,37 @@
+#!/bin/sh
+# Enforces Conventional Commits on the subject line.
+# Install: npm install  (sets core.hooksPath via prepare)
+#          or: git config core.hooksPath .githooks
+
+commit_msg_file="$1"
+subject=$(head -n1 "$commit_msg_file")
+
+# Git-generated messages during merge/rebase/cherry-pick.
+case "$subject" in
+  Merge\ *) exit 0 ;;
+  Revert\ *) exit 0 ;;
+  fixup!* | squash!*) exit 0 ;;
+esac
+
+pattern='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9._/-]+\))?(!)?: .+'
+
+if printf '%s\n' "$subject" | grep -Eq "$pattern"; then
+  exit 0
+fi
+
+cat >&2 <<'EOF'
+Commit message rejected: subject must follow Conventional Commits.
+
+  type(scope): description
+  type!: description          (breaking change)
+
+  Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+
+  Examples:
+    feat(projects): add prev/next navigation
+    fix: correct film embed aspect ratio
+    chore: remove unused project logos
+
+EOF
+
+exit 1
