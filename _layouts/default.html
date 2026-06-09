@@ -90,19 +90,6 @@
 
     <!-- Main Content Container -->
     <div class="container">
-      <!-- Breadcrumb Navigation -->
-      {% unless page.url == "/" or page.url == "/index.html" %}
-      <nav class="breadcrumb">
-        <a href="{{ site.url }}/">Home</a>
-        {% if page.categories %} {% for category in page.categories %}
-        <a href="{{ site.url }}/{{ category | slugify }}">{{ category | capitalize }}</a>
-        {% endfor %} {% endif %} {% if page.permalink %}
-        <a href="{{ site.url }}{{ page.permalink | prepend: '/' }}">{{ page.title }}</a>
-        {% endif %}
-      </nav>
-      {% endunless %}
-
-      <!-- Page Content -->
       {{ content }}
     </div>
 
