@@ -661,6 +661,33 @@ figcaption {
   }
 }
 
+/* Back link above page titles */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: rgb(var(--fg) / 0.5);
+  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &:hover {
+    color: rgb(var(--fg));
+    transform: translateX(-2px);
+  }
+
+  &-icon {
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-link:hover {
+    transform: none;
+  }
+}
+
 /* Shared prev/next nav cards (writings, films, projects) */
 .post-nav {
   margin-top: 5rem;
