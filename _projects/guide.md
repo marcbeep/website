@@ -4,6 +4,7 @@ permalink: guide
 categories: projects
 title: "Marc's Guide"
 description: "Interactive rankings of the best coffees in London."
+visit: "https://guide.marc.tt"
 date: 2026-07-06
 emoji: "☕"
 tech_stack: ["Next.js", "Tailwind", "Mapbox", "PostgreSQL + Drizzle"]
