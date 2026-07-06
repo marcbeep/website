@@ -4,7 +4,6 @@ permalink: worldtag
 categories: projects
 title: "WorldTag"
 description: "A digital product passport solution for clothing brands."
-visit: "https://worldtag.co.uk"
 date: 2024-10-29
 emoji: "🏷️"
 tech_stack: ["Next.js", "Tailwind CSS"]
