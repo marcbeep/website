@@ -7,7 +7,7 @@ title: Home
 
 <div class="home-hero animate-in">
   <h1>Hey, I'm Marc</h1>
-  <p class="home-intro">Software Engineer from Trinidad and Tobago, based in London. I build <a href="/projects">products</a>, <a href="/writings">write</a>, and make <a href="/films">short films</a>.</p>
+  <p class="home-intro">Software Engineer from Trinidad and Tobago, based in London. I <a href="/projects">build</a> cool things, <a href="/writings">write</a> whatever's on my mind, and <a href="/films">film</a> the occassional short.</p>
 </div>
 
 <figure class="home-photo animate-in" style="--delay: 80ms;">
