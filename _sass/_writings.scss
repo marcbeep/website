@@ -90,6 +90,49 @@
   margin: 1rem 0 0 0;
 }
 
+/* Table */
+.writing-content table {
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+  border: 1px solid rgb(var(--fg) / 0.08);
+  border-radius: 0.75rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: 0.9375rem;
+  text-align: left;
+
+  th,
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgb(var(--fg) / 0.06);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th + th,
+  td + td {
+    border-left: 1px solid rgb(var(--fg) / 0.06);
+  }
+
+  th {
+    background: rgb(var(--fg) / 0.04);
+    color: rgb(var(--fg) / 0.8);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  td {
+    color: rgb(var(--fg) / 0.65);
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+}
+
 .writing-content pre {
   margin: 1.5rem 0;
   padding: 1rem 1.25rem;
