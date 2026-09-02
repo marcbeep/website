@@ -10,9 +10,9 @@ title: Home
   <p class="home-intro">I'm a Software Engineer from Trinidad and Tobago, based in London. I enjoy building <a href="/projects">projects</a> that interest me, <a href="/writings">writing</a> on practical philosophy, and making short <a href="/films">films.</a></p>
 </div>
 
-<figure class="home-photo animate-in" style="--delay: 80ms;">
+<figure class="home-photo image-frame animate-in" style="--delay: 80ms;">
   <img src="{{ '/assets/index/home.png' | relative_url }}" alt="Lisbon, 2024">
-  <span class="photo-caption">Lisbon, 2024</span>
+  <figcaption class="image-caption">Lisbon, 2024</figcaption>
 </figure>
 
 <div class="latest-grid">

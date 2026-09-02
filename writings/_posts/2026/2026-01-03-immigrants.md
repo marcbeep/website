@@ -3,8 +3,8 @@ layout: writings
 title: You should be an Immigrant
 permalink: immigrant
 categories: writings
-description: Illustration by Michael Beepath
 image: /assets/writings/2026/immigrant.png
+image_caption: Illustration by Michael Beepath
 ---
 
 I recently wrote an essay called [The Geography of Ambition](/ambition). 

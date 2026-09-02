@@ -3,8 +3,8 @@ layout: writings
 title: How to Make Big Scary Decisions
 permalink: decisions
 categories: writings
-description: Illustration by Michael Beepath
 image: /assets/writings/2026/decisions.jpeg
+image_caption: Illustration by Michael Beepath
 ---
 
 Most people don’t really make big decisions. 
