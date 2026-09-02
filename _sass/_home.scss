@@ -53,43 +53,11 @@
 
   /* Hero photo */
   .home-photo {
-    position: relative;
     margin: 0 auto 3.5rem auto;
     max-width: 85%;
-    overflow: hidden;
-    border-radius: 1rem;
 
     img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
       filter: grayscale(1);
-      margin: 0;
-    }
-
-    .photo-caption {
-      position: absolute;
-      bottom: 0.75rem;
-      right: 0.875rem;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      color: rgb(255 255 255 / 0);
-      background: rgb(0 0 0 / 0);
-      -webkit-backdrop-filter: blur(0);
-      backdrop-filter: blur(0);
-      padding: 0.25rem 0.625rem;
-      border-radius: 0.375rem;
-      pointer-events: none;
-      transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    &:hover .photo-caption {
-      color: rgb(255 255 255 / 0.7);
-      background: rgb(0 0 0 / 0.25);
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
     }
   }
 

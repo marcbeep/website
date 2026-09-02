@@ -25,9 +25,10 @@ layout: default
   </header>
 
   {% if page.image %}
-  <div class="film-banner">
+  <figure class="film-banner image-frame">
     <img src="{{ page.image | absolute_url }}" alt="{{ page.title }}" class="film-banner-image">
-  </div>
+    {% if page.image_caption %}<figcaption class="image-caption">{{ page.image_caption }}</figcaption>{% endif %}
+  </figure>
   {% endif %}
 
   {% assign yt_id = page.visit | split: '/' | last | split: '?' | first %}

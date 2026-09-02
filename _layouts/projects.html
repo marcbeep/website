@@ -4,9 +4,10 @@ layout: default
 
 <article class="project">
   {% if page.image %}
-  <div class="project-banner">
+  <figure class="project-banner image-frame">
     <img src="{{ page.image | absolute_url }}" alt="{{ page.title }}" class="project-banner-image">
-  </div>
+    {% if page.image_caption %}<figcaption class="image-caption">{{ page.image_caption }}</figcaption>{% endif %}
+  </figure>
   {% endif %}
 
   <header class="project-header">
