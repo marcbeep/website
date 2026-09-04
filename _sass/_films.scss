@@ -87,6 +87,13 @@
       background: rgb(var(--fg) / 0.03);
       box-shadow: 0 0 0 1px rgb(var(--fg) / 0.08);
 
+      // Shorts are 9:16; cap the width so a full-column embed isn't overwhelming.
+      &.is-vertical {
+        aspect-ratio: 9 / 16;
+        max-width: 300px;
+        margin-inline: auto;
+      }
+
       iframe {
         position: absolute;
         inset: 0;

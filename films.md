@@ -18,7 +18,7 @@ description: A collection of Marc Beepath's films.
     <span class="film-latest-sep" aria-hidden="true">·</span>
     <a href="{{ yt.url }}" class="film-latest-title" target="_blank" rel="noopener noreferrer">{{ yt.title }}</a>
   </div>
-  <div class="film-latest-embed">
+  <div class="film-latest-embed{% if yt.vertical %} is-vertical{% endif %}">
     <iframe src="https://www.youtube-nocookie.com/embed/{{ yt.id }}?rel=0&modestbranding=1" title="{{ yt.title }}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </section>

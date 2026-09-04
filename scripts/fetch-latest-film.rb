@@ -25,16 +25,16 @@ def keep_existing!(reason)
   exit 0
 end
 
-uri = URI("https://www.youtube.com/feeds/videos.xml?channel_id=#{CHANNEL_ID}")
-response = begin
-  Net::HTTP.get_response(uri)
-rescue StandardError => e
-  keep_existing!("YouTube RSS request failed: #{e.message}")
+def fetch(url)
+  response = Net::HTTP.get_response(URI(url))
+  response.is_a?(Net::HTTPSuccess) ? response.body.to_s : nil
+rescue StandardError
+  nil
 end
 
-keep_existing!("YouTube RSS returned HTTP #{response.code}") unless response.is_a?(Net::HTTPSuccess)
+xml = fetch("https://www.youtube.com/feeds/videos.xml?channel_id=#{CHANNEL_ID}")
+keep_existing!("YouTube RSS unavailable") unless xml
 
-xml = response.body.to_s
 entry = xml.match(/<entry>[\s\S]*?<\/entry>/)
 keep_existing!("No entries in YouTube RSS feed") unless entry
 
@@ -43,12 +43,18 @@ id = body[/\<yt:videoId\>([^<]+)\<\/yt:videoId\>/, 1]
 title = body[/\<title\>([^<]+)\<\/title\>/, 1]
 published = body[/\<published\>([^<]+)\<\/published\>/, 1]
 keep_existing!("Could not parse YouTube RSS entry") unless id && title
+id = id.strip
+
+# The main feed can't flag Shorts, but the UUSH playlist lists only Shorts — so membership means vertical.
+shorts = fetch("https://www.youtube.com/feeds/videos.xml?playlist_id=#{CHANNEL_ID.sub(/\AUC/, 'UUSH')}")
+vertical = shorts.to_s.include?("<yt:videoId>#{id}</yt:videoId>")
 
 data = {
-  "id" => id.strip,
+  "id" => id,
   "title" => decode_xml_entities(title.strip),
   "published_at" => published&.strip,
-  "url" => "https://www.youtube.com/watch?v=#{id.strip}"
+  "vertical" => vertical,
+  "url" => "https://www.youtube.com/#{vertical ? "shorts/#{id}" : "watch?v=#{id}"}"
 }
 
 FileUtils.mkdir_p(File.dirname(OUT))
