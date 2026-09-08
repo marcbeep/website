@@ -6,13 +6,13 @@ title: Home
 <div class="home">
 
 <div class="home-hero animate-in">
-  <h1>Hey, I'm Marc</h1>
+  <h1>Wagwan</h1>
   <p class="home-intro">I'm a Software Engineer from Trinidad and Tobago, based in London. I enjoy building <a href="/projects">projects</a> that interest me, <a href="/writings">writing</a> on practical philosophy, and making short <a href="/films">films.</a></p>
 </div>
 
 <figure class="home-photo image-frame animate-in" style="--delay: 80ms;">
-  <img src="{{ '/assets/index/home.png' | relative_url }}" alt="Lisbon, 2024">
-  <figcaption class="image-caption">Lisbon, 2024</figcaption>
+  <img src="{{ '/assets/index/hero/2026.jpeg' | relative_url }}" alt="Hiking in the French Alps, 2026">
+  <figcaption class="image-caption">Hiking in the French Alps, 2026</figcaption>
 </figure>
 
 <div class="latest-grid">
