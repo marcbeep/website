@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  # RSS is fetched at build time only; rebuild nightly so new uploads (including Shorts) appear.
+  # Rebuild nightly so new YouTube uploads (fetched at build time) and future-dated posts appear.
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
